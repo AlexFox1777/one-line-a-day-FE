@@ -10,11 +10,18 @@ const PostCardDiv = styled.div`
 
 
 
-export default function PostCard({ title, text }) {
+export default function PostCard({ entryId, title, text, props }) {
     return(
         <PostCardDiv>
+            {console.log("props on post card ", props)}
             <h2>{title}</h2>
             <p>{text}</p>
+            <nav>
+                <a
+                    href="#"
+                    onClick={() => props.history.push(`/home/${entryId}`)}
+                >Link to another component</a>
+            </nav>
         </PostCardDiv>
 
     )
